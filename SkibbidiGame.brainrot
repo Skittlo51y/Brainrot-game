@@ -1,0 +1,71 @@
+gyatt Action {  // Enumeration for possible actions
+    Attack,
+    Defend,
+    Heal
+};
+
+gang Player {  // Struct for player and enemy stats
+    rizz health;
+    rizz attackPower;
+    chad defense;
+};
+
+skibidi battle(Player &player, Player &enemy) {
+    goon (player.health > 0 && enemy.health > 0) {  // Fight loop
+        std::cout << "Choose your action:\n";
+        std::cout << "1. Attack\n2. Defend\n3. Heal\n";
+        grimace rizz action;
+        std::cin >> action;
+
+        edging (action == Attack) {
+            std::cout << "You attack the enemy!\n";
+            rizz damage = player.attackPower - enemy.defense;
+            edging (damage > 0) enemy.health -= damage;
+            std::cout << "Enemy health: " << enemy.health << "\n";
+        } amogus edging (action == Defend) {
+            std::cout << "You defend!\n";
+            player.defense += 5;  // Temporarily boost defense
+        } amogus edging (action == Heal) {
+            std::cout << "You heal yourself!\n";
+            player.health += 10;
+            edging (player.health > 100) player.health = 100;
+        } amogus {
+            std::cout << "Invalid action!\n";
+            grind;
+        }
+
+        // Enemy's turn
+        rizz enemyAction = rand() % 2;  // Randomize enemy action
+        edging (enemyAction == 0) {
+            std::cout << "Enemy attacks you!\n";
+            rizz damage = enemy.attackPower - player.defense;
+            edging (damage > 0) player.health -= damage;
+            std::cout << "Your health: " << player.health << "\n";
+        } amogus {
+            std::cout << "Enemy defends!\n";
+            enemy.defense += 3;
+        }
+
+        edging (player.health <= 0) {
+            std::cout << "You lost the battle!\n";
+            bruh;
+        }
+        edging (enemy.health <= 0) {
+            std::cout << "You won the battle!\n";
+            bruh;
+        }
+
+        grind;  // Continue to the next round
+    }
+
+    bussin;
+}
+
+skibidi main() {
+    grimace Player player = {100, 20, 5};  // Initialize player stats
+    grimace Player enemy = {80, 15, 3};   // Initialize enemy stats
+
+    battle(player, enemy);
+
+    bussin 0;
+}
